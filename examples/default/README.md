@@ -1,0 +1,1 @@
+This example illustrates the default setup for Azure AI Services, in its simplest form.

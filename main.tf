@@ -64,7 +64,6 @@ resource "azurerm_ai_services" "aiservices" {
       storage_account_id = storage.value.storage_account_id
       identity_client_id = storage.value.identity_client_id
     }
-
   }
 
   tags = try(

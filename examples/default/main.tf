@@ -18,13 +18,13 @@ module "rg" {
 }
 
 module "ai-services" {
-  source = "../.."
+  source  = "cloudnationhq/ais/azure"
+  version = "~> 1.0"
 
   aiservices = {
     name           = module.naming.cognitive_account.name_unique
     resource_group = module.rg.groups.demo.name
     location       = module.rg.groups.demo.location
     sku_name       = "S0"
-    kind           = "OpenAI"
   }
 }
