@@ -42,7 +42,7 @@ resource "azurerm_ai_services" "service" {
     for_each = try(var.service.network_acls, null) != null ? { default = var.service.network_acls } : {}
 
     content {
-      # bypass         = network_acls.value.bypass
+      bypass         = network_acls.value.bypass
       default_action = network_acls.value.default_action
       ip_rules       = network_acls.value.ip_rules
 
