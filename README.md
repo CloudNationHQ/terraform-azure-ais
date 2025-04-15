@@ -1,4 +1,4 @@
-# Cognitive Services
+# Ai Services
 
 This terraform module enables the efficient creation and management of azure AI Services.
 
