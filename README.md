@@ -124,7 +124,7 @@ Default: `{}`
 
 The following outputs are exported:
 
-### <a name="output_aiservices"></a> [aiservices](#output\_aiservices)
+### <a name="output_service"></a> [service](#output\_service)
 
 Description: Contains all the outputs for AI services
 <!-- END_TF_DOCS -->
