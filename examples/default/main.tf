@@ -17,7 +17,7 @@ module "rg" {
   }
 }
 
-module "ai-services" {
+module "ais" {
   source  = "cloudnationhq/ais/azure"
   version = "~> 1.0"
 
