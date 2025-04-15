@@ -1,4 +1,4 @@
-variable "service" {
+variable "account" {
   description = "Contains the cognitive services account configuration"
   type = object({
     name                               = string
@@ -40,12 +40,12 @@ variable "service" {
   })
 
   validation {
-    condition     = var.service.location != null || var.location != null
+    condition     = var.account.location != null || var.location != null
     error_message = "location must be provided either in the AI services object or as a separate variable."
   }
 
   validation {
-    condition     = var.service.resource_group != null || var.resource_group != null
+    condition     = var.account.resource_group != null || var.resource_group != null
     error_message = "resource group name must be provided either in the AI services object or as a separate variable."
   }
 }

@@ -1,26 +1,26 @@
-resource "azurerm_ai_services" "service" {
+resource "azurerm_ai_services" "account" {
   resource_group_name = coalesce(
     lookup(
-      var.service, "resource_group", null
+      var.account, "resource_group", null
     ), var.resource_group
   )
 
   location = coalesce(
-    lookup(var.service, "location", null
+    lookup(var.account, "location", null
     ), var.location
   )
 
-  name                               = var.service.name
-  sku_name                           = var.service.sku_name
-  custom_subdomain_name              = var.service.custom_subdomain_name
-  fqdns                              = var.service.fqdns
-  local_authentication_enabled       = var.service.local_authentication_enabled
-  outbound_network_access_restricted = var.service.outbound_network_access_restricted
-  public_network_access              = var.service.public_network_access
+  name                               = var.account.name
+  sku_name                           = var.account.sku_name
+  custom_subdomain_name              = var.account.custom_subdomain_name
+  fqdns                              = var.account.fqdns
+  local_authentication_enabled       = var.account.local_authentication_enabled
+  outbound_network_access_restricted = var.account.outbound_network_access_restricted
+  public_network_access              = var.account.public_network_access
 
 
   dynamic "customer_managed_key" {
-    for_each = try(var.service.customer_managed_key, null) != null ? [var.service.customer_managed_key] : []
+    for_each = try(var.account.customer_managed_key, null) != null ? [var.account.customer_managed_key] : []
 
     content {
       key_vault_key_id   = customer_managed_key.value.key_vault_key_id
@@ -30,7 +30,7 @@ resource "azurerm_ai_services" "service" {
   }
 
   dynamic "identity" {
-    for_each = try(var.service.identity, null) != null ? { default = var.service.identity } : {}
+    for_each = try(var.account.identity, null) != null ? { default = var.account.identity } : {}
 
     content {
       type         = identity.value.type
@@ -39,7 +39,7 @@ resource "azurerm_ai_services" "service" {
   }
 
   dynamic "network_acls" {
-    for_each = try(var.service.network_acls, null) != null ? { default = var.service.network_acls } : {}
+    for_each = try(var.account.network_acls, null) != null ? { default = var.account.network_acls } : {}
 
     content {
       bypass         = network_acls.value.bypass
@@ -58,7 +58,7 @@ resource "azurerm_ai_services" "service" {
   }
 
   dynamic "storage" {
-    for_each = try(var.service.storage, null) != null ? { default = var.service.storage } : {}
+    for_each = try(var.account.storage, null) != null ? { default = var.account.storage } : {}
 
     content {
       storage_account_id = storage.value.storage_account_id
@@ -67,6 +67,6 @@ resource "azurerm_ai_services" "service" {
   }
 
   tags = try(
-    var.service.tags, var.tags
+    var.account.tags, var.tags
   )
 }

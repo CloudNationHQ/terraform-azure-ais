@@ -21,7 +21,7 @@ module "ais" {
   source  = "cloudnationhq/ais/azure"
   version = "~> 1.0"
 
-  service = {
+  account = {
     name           = module.naming.cognitive_account.name_unique
     resource_group = module.rg.groups.demo.name
     location       = module.rg.groups.demo.location
