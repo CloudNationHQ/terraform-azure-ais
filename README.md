@@ -25,19 +25,19 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
-- <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) (4.26.0)
+- <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) (~> 4.0)
 
 ## Resources
 
 The following resources are used by this module:
 
-- [azurerm_ai_services.aiservices](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/ai_services) (resource)
+- [azurerm_ai_services.service](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/ai_services) (resource)
 
 ## Required Inputs
 
 The following input variables are required:
 
-### <a name="input_aiservices"></a> [aiservices](#input\_aiservices)
+### <a name="input_service"></a> [service](#input\_service)
 
 Description: Contains the cognitive services account configuration
 
