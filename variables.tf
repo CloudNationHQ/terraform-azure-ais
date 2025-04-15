@@ -50,12 +50,6 @@ variable "account" {
   }
 }
 
-variable "naming" {
-  description = "contains naming convention"
-  type        = map(string)
-  default     = null
-}
-
 variable "location" {
   description = "default azure region to be used."
   type        = string
