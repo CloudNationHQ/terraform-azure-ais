@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> This one is supersed by https://github.com/CloudNationHQ/terraform-azure-cog
+> Supersed by https://github.com/CloudNationHQ/terraform-azure-cog
 
 # Ai Services
 
