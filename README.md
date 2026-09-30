@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This one is supersed by https://github.com/CloudNationHQ/terraform-azure-cog
+
 # Ai Services
 
 This terraform module enables the efficient creation and management of azure AI Services.
